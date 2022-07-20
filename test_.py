@@ -61,7 +61,7 @@ def upload_btn():
       
     global fields,dataframes,df
     
-    filename = filedialog.askopenfilename( filetypes=[('All files','.'),('Excel file','.xlsx'),('Text file','.csv')])
+    filename = filedialog.askopenfilename( filetypes=[('All files','.*'),('Excel file','.xlsx'),('Text file','.csv')])
     # print(filename[-4],'===========================================================')
     
     if filename[-4:]=='xlsx':
