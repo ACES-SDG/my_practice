@@ -31,15 +31,15 @@ clr=col[12]
 sz=col[13]
 
 
-print(clr,sz,'columns==========================================================================================================')
+# print(clr,sz,'columns==========================================================================================================')
 
-scatter(clr,sz)  # case 1 for both colors and size marks
+# scatter(clr,sz)  # case 1 for both colors and size marks
 
-scatter(clr,'')   # case 2 for only color marks
-scatter('',sz)  # case 3 for only size marks
+# scatter(clr,'')   # case 2 for only color marks
+# scatter('',sz)  # case 3 for only size marks
 
-scatter('','') # case 4 for non marks
+# scatter('','') # case 4 for non marks
 
-fig = px.scatter(df, x="Sales", y="Quantity", color="City",
+fig = px.scatter(df, x="Sales", y='Quantity', color="Region",
                  hover_name="Country/Region", log_x=True, size_max=100)
-fig.show()
+# fig.show()
