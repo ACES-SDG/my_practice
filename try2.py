@@ -1,5 +1,8 @@
 import tkinter as tk
 from tkinter import *
+# from  tkinter.dnd import *
+from tkinter.dnd import DndHandler
+from tkinter.dnd import dnd_start
 from tkinter import Menu
 from tkinter import messagebox
 from tkinter import ttk
@@ -31,6 +34,10 @@ def graphs(root, df):
     print(columnList)
     print(len(columnList))
     colList.pack(expand=True, side=TOP)
+
+
+    
+    
 
     def selectRow():
         global row
@@ -98,10 +105,19 @@ def graphs(root, df):
     sheetpanel.pack_propagate(0)
     sheetpanel.pack(side=TOP, fill='x', anchor='ne', padx=70)
 
-    options = ('Line Graph', 'Bar Chart', 'Pie Chart', 'Box PLot')
-    selected = StringVar()
-    selected.set('Line Graph')
-    selectgraph = OptionMenu(sheetpanel, selected, *options)
-    selectgraph.pack()
+    txt = Label(sheetpanel,height=15, width=30,bg='yellow')
+    txt.pack(side=TOP)
+    txt.pack_propagate(0)
+
+    
+
+    
+    
+    
+    # options = ('Line Graph', 'Bar Chart', 'Pie Chart', 'Box PLot')
+    # selected = StringVar()
+    # selected.set('Line Graph')
+    # selectgraph = OptionMenu(sheetpanel, selected, *options)
+    # selectgraph.pack()
 
     pass

@@ -43,10 +43,10 @@ def Filter():
 
 def delete_from_graph():
     print('Excluded',df[df['Category']=="Furniture"].index)
-    task = Checkbutton.config()
-  
-    ind =list(df[df[task]=="Furniture"].index)
     
+  
+    ind =list(df[df["Category"]=="Furniture"].index)
+    print(ind,'     line no         51')
     
     i=f
     f = df.drop(df.index[ind],axis=0)
