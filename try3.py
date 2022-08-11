@@ -59,20 +59,45 @@ def charts():
     graphs(root,df)
 
     pass
-
+widg = []
+def go():
+    
+    if sidepanel.winfo_ismapped():
+        # for i in sidepanel.winfo_children():
+        #     widg.append(i)
+        sidepanel.pack_forget()
+    else:
+        sidepanel.pack(side=TOP)
+        
+        pass    
+    
+    pass
 
 root = tk.Tk()
 root.title("Ocean-Book1")
 
 root.geometry("900x700")
 
-sidepanel = Frame(root, width=70, bg='#52527a', relief=SUNKEN)
+oneframe = Frame(root, width=70, bg='white', relief=SUNKEN)
+oneframe.pack_propagate(0)
+oneframe.pack(side=LEFT, fill='y')
+
+back = Frame(oneframe,width=70,bg='#52527a',height=50, relief=SUNKEN)
+back.pack_propagate(0)
+back.pack(side=TOP)
+
+
+sidepanel = Frame(oneframe, width=70, bg='#52527a', height=750,relief=SUNKEN)
 sidepanel.pack_propagate(0)
-sidepanel.pack(side=LEFT, fill='y')
+sidepanel.pack(side=TOP )
 
 filepanel = Frame(root, height=450, width=1150)
 filepanel.pack(side=BOTTOM, padx=70, anchor='sw', fill='x', expand=True)
 filepanel.pack_propagate(0)
+
+
+btn = Button(back,text=' <-- ',width=5,height=1,command=go)
+btn.pack(side=TOP)
 
 display_file = Text(filepanel)
 display_file.config(state='disabled')

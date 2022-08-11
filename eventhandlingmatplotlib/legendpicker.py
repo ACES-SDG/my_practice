@@ -8,10 +8,11 @@ y2 = 4 * np.sin(2*np.pi*2*t)
 
 fig, ax = plt.subplots()
 ax.set_title('Click on legend line to toggle line on/off')
-line1, = ax.plot(t, y1, lw=2, label='1 Hz')
+line1, = ax.plot(t, y1, lw=2, label='1 Hz',picker=True)
 line2, = ax.plot(t, y2, lw=2, label='2 Hz')
 leg = ax.legend(fancybox=True, shadow=True)
 
+# print('legend lines ', leg.get_lines())
 lines = [line1, line2]
 lined = {}  # Will map legend lines to original lines.
 for legline, origline in zip(leg.get_lines(), lines):
@@ -31,5 +32,13 @@ def on_pick(event):
     legline.set_alpha(1.0 if visible else 0.2)
     fig.canvas.draw()
 
+def print_(event):
+    if event:
+        # print('onpick2 line:', event.pickx, event.picky)
+        print('clicked',event.xdata)
+        # print(' ==  ==  ==  ==  ==  ==',line1.get_xdata())
+    else:
+        print('nothing')
 fig.canvas.mpl_connect('pick_event', on_pick)
+fig.canvas.mpl_connect('button_press_event',print_)
 plt.show()
