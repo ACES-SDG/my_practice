@@ -9,7 +9,9 @@ ws.geometry('400x200')
 
 
 def open_file():
-    file_path = askopenfile(mode='r', filetypes=[('Image Files', '*jpeg')])
+    file_path = askopenfile(mode='r', filetypes=[('All Files', '*.*')])
+    file =  open(file_path,'r')
+    print(file)
     if file_path is not None:
         pass
 

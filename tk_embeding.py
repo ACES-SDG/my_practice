@@ -18,6 +18,7 @@ ax = fig.add_subplot()
 line, = ax.plot(t, 2 * np.sin(2 * np.pi * t))
 ax.set_xlabel("time [s]")
 ax.set_ylabel("f(t)")
+# ax.set_xticks(orient='vertical',t)
 
 canvas = FigureCanvasTkAgg(fig, master=root)  # A tk.DrawingArea.
 canvas.draw()
@@ -28,7 +29,7 @@ toolbar.update()
 
 canvas.mpl_connect(
     "key_press_event", lambda event: print(f"you pressed {event.key}"))
-canvas.mpl_connect("key_press_event", key_press_handler)
+# canvas.mpl_connect("key_press_event", key_press_handler)
 
 def on_press(event):
     print('you pressed', event.button, event.xdata, event.ydata)
