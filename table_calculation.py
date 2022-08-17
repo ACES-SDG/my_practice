@@ -1,7 +1,7 @@
 from math import floor
-from tkinter import  GROOVE, LEFT, TOP, X, Y, Button, Label, Tk
+from tkinter import  GROOVE, LEFT, TOP, X, Y, Button, Frame, Label, Tk
 from tkinter.filedialog import askopenfilename
-from customtkinter import CTkFrame
+from customtkinter import CTkFrame,CTkLabel
 import pandas as pd
 
 
@@ -22,12 +22,12 @@ def t_cal(h,sh,sales):
         listk = dict(sales['Sales'])
         x = list(listk.keys())
         for i in h:
-            side_headings2 = CTkFrame(main_f, width=98,bg='yellow')
+            side_headings2 = CTkFrame(main_f, width=98)
             side_headings2.pack(side=LEFT,fill=Y,anchor='nw',padx=2)
 
             # list_h = []
             for j in sh:
-                labels_ = Label(side_headings2,text='  ', bg='yellow' ,borderwidth=3,width=12)
+                labels_ = Label(side_headings2,text='  ', borderwidth=2,width=12)
                 labels_.pack(pady=2)
                 
                
@@ -70,12 +70,16 @@ def t_cal(h,sh,sales):
     side_headings.pack(side=LEFT,fill=Y,anchor='nw',padx=2)
 
     for i in h:
-        labels = Label(top_hedings,text=i,width=12,borderwidth=3,)
-        labels.pack(side=LEFT,padx=2)
+        # frame_h = CTkFrame(top_hedings,border_width=2,border_color='black')
+        # frame_h.pack(side=LEFT,padx=2)
+        labels = Label(top_hedings,text=i,width=12,borderwidth=2)
+        labels.pack(side=LEFT,padx=2,)#pady=2
 
     for j in sh:
-        labels = Label(side_headings,text=j,borderwidth=3,anchor='w',width=12)
-        labels.pack(pady=2)
+        # frame_sh = CTkFrame(side_headings,border_width=2,border_color='black')
+        # frame_sh.pack(pady=2)
+        labels = Label(side_headings,text=j,borderwidth=2,anchor='w',width=12)
+        labels.pack(pady=2) #,padx=2
 
     numlsit = list(sales['Sales'])
     print(numlsit)
