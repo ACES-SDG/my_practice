@@ -58,17 +58,17 @@ def graphs(root, df):
         x = str(column)
         y = str(row)
 
-        x = list(df[x])
-        y = list(df[y])
+        x = int(df[x].sum())
+        y = int(df[y].sum())
         fig = plt.figure(figsize=(6, 4))
         plt.cla()
         plt.clf()
 
-        for i in range(0, len(y)):
-            y[i] = int(y[i])
-        for i in range(0, len(x)):
-            x[i] = str(x[i])
-        plt.bar(x, y)
+        # for i in range(0, len(y)):
+        #     y[i] = int(y[i])
+        # for i in range(0, len(x)):
+        #     x[i] = str(x[i])
+        plt.plot(x, y,'o')
         # if selected=='Line Graph':
         #   plt.xticks(rotation='vertical')
         #  plt.plot(x, y)

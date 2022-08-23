@@ -13,11 +13,13 @@ def t_cal(h,sh,sales):
     my_list=[]
     
     def ele():
-        def hover_func(e):
-            labels_.configure(background='red')
+        def hover_enter(e):
+            e.widget.configure(fg='yellow')
+            e.widget.configure(background='red')
 
         def hover_leave(e):
-            labels_.configure(background='yellow')
+            e.widget.configure(background='white')
+            e.widget.configure(fg='black')
 
         listk = dict(sales['Sales'])
         x = list(listk.keys())
@@ -27,8 +29,10 @@ def t_cal(h,sh,sales):
 
             # list_h = []
             for j in sh:
-                labels_ = Label(side_headings2,text='  ', borderwidth=2,width=12)
+                labels_ = Label(side_headings2,text='  ', bg='white',borderwidth=2,width=12)
                 labels_.pack(pady=2)
+                labels_.bind('<Enter>',hover_enter)
+                labels_.bind('<Leave>',hover_leave)
                 
                
                 for k in x:
