@@ -21,4 +21,16 @@ txt.grid(row=0, column=0, columnspan=2)
 e = Entry(root, width=100)
 e.grid(row=1, column=0)
 send = Button(root, text="Send", command=send).grid(row=1, column=1)
+
+
+canvas = Canvas(root,bg='yellow')
+
+canvas.grid()
+
+legend_frame = LabelFrame(canvas,text='Legend',padx=5, pady=5, bg='red')
+legend_label = Label(legend_frame,text='')
+legend_label.pack()
+
+canvas.create_window(120,200,window=legend_frame,anchor=E,)
+
 root.mainloop()
