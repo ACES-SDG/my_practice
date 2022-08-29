@@ -18,9 +18,10 @@ df = pd. read_excel("C:/Users/acesi/OneDrive/Desktop/Excel_files/Sample - Supers
 N = 10
 # x = np.random.rand(N)
 # y = np.random.rand(N)
-colors = np.random.rand(N)
+# colors = np.random.rand(N)
+colors = np.random.choice(df['Sub-Category'], size=N)
 # area = (30 * np.random.rand(N))**2  # 0 to 15 point radii
-
+print(colors)
 
 
 plt.scatter('Category', 'Sales',data=df, s='Profit', c=colors, alpha=0.5,sizes=(200,1500))
