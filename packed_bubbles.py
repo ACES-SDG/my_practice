@@ -13,13 +13,30 @@ browsers.
 
 import numpy as np
 import matplotlib.pyplot as plt
+import pandas as pd 
+from matplotlib import cm
+df= pd.read_excel("C:/Users/acesi/OneDrive/Desktop/Excel_files/Sample - Superstore2.xlsx")
+# # color_s = cm.prism(df['Sales'])
 
-browser_market_share = {
-    'browsers': ['firefox', 'chrome', 'safari', 'edge', 'ie', 'opera'],
-    'market_share': [8.61, 69.55, 8.36, 4.12, 2.76, 2.43],
-    'color': ['#5A69AF', '#579E65', '#F9C784', '#FC944A', '#F24C00', '#00B825']
-}
+# # colors = np.random.rand(len(df['Sub-Category']))
+import random
+colors_ = lambda n: list(map(lambda i: "#" + "%06x" % random.randint(0, 0xFFFFFF),range(n)))
+x = len(df['City'].unique())
+c_l=list(map(colors_,[x]))
+# # print(x)
+# # print(c_l[0])
+# # print(color_s)
 
+# browser_market_share = {
+#     'browsers': ['firefox', 'chrome', 'safari', 'edge', 'ie', 'opera'],
+#     'market_share': [8.61, 69.55, 8.36, 4.12, 2.76, 82.43],
+#     'color': ['#5A69AF', '#579E65', '#F9C784', '#FC944A', '#F24C00', '#00B825']
+# }
+df = df.groupby('City').agg({'Sales':sum})
+
+# print(df)
+# print(list(df.index))
+# print(list(df['Sales']))
 
 class BubbleChart:
     def __init__(self, area, bubble_spacing=0):
@@ -37,6 +54,7 @@ class BubbleChart:
         -----
         If "area" is sorted, the results might look weird.
         """
+
         area = np.asarray(area)
         r = np.sqrt(area / np.pi)
 
@@ -155,17 +173,19 @@ class BubbleChart:
                     horizontalalignment='center', verticalalignment='center')
 
 
-bubble_chart = BubbleChart(area=browser_market_share['market_share'],
-                           bubble_spacing=0)
+# bubble_chart = BubbleChart(area=list(df['Sales']),               #df['Sales']    browser_market_share['market_share']
+#                            bubble_spacing=0)
 
-bubble_chart.collapse()
+# bubble_chart.collapse()
 
-fig, ax = plt.subplots(subplot_kw=dict(aspect="equal"))
-bubble_chart.plot(
-    ax, browser_market_share['browsers'], browser_market_share['color'])
-ax.axis("off")
-ax.relim()
-ax.autoscale_view()
-ax.set_title('Browser market share')
+# fig, ax = plt.subplots(subplot_kw=dict(aspect="equal"))
+# bubble_chart.plot(
+#     ax,list(df.index),c_l[0]  )  #  df['Category'], cm.prism(df['Quantity'])       browser_market_share['browsers'],browser_market_share['color']
+# ax.axis("off")
+# ax.relim()
+# ax.autoscale_view()
+# ax.set_title('Browser market share')b
 
-plt.show()
+# plt.show()
+
+

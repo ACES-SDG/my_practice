@@ -11,7 +11,7 @@ g_data = df.groupby(['Region','Sub-Category']).aggregate({'Sales':sum}).unstack(
 def stackedBar():
     # global fig
     fig, ax = plt.subplots(1, figsize=(7, 5))
-    
+    print(type(fig))
     for j in list(g_data.columns):
         # if i % 2==0:
         plt.bar(g_data.index, g_data[j].values, )  #color = '#337AE3',
@@ -44,4 +44,4 @@ def stackedBar():
     # plt.title('My Company - 2020\n', loc='left')
     # plt.show()
     return fig
-# stackedBar()
+stackedBar()
