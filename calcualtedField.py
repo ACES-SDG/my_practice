@@ -56,20 +56,20 @@ def fetch_code():
     get_expression = expression_.get('1.0',END)
     get_true = True_condition.get()
     get_false = False_condition.get()
-
+    
     # print(f'operand:{get_operand}\n operator:{get_operator}\n expression:{get_expression}\n True:{get_true}\n False:{get_false}')
 
-    code = f'df["New_field"]= np.where(df["{get_operand}"]{get_operator}{get_expression},"{get_true}","{get_false}")'
+    code = f'df["New_field"]= np.where(df["{get_operand}"]{get_operator}{get_expression},df["{get_true}"],{get_false})'
     exec(code)
-    new_list = list(df.columns)
-    columns_list.delete(0, END)
-    for i in new_list:
-        columns_list.insert(END,i)
+    # new_list = list(df.columns)
+    # columns_list.delete(0, END)
+    columns_list.insert(END,'New_field')
 
-    plt.bar(df['New_field'],df['Sales'],data=df)
-    plt.show()
-    df.to_excel('C:/Users/acesi/OneDrive/Desktop/Excel_files/syntax convention.xlsx')
-    # print(df['New_field'].head())
+    # plt.bar(df['New_field'],df['Sales'],data=df)
+    # plt.show()
+    # df.to_excel('C:/Users/acesi/OneDrive/Desktop/Excel_files/syntax convention.xlsx')
+    print(df['New_field'].dtype)
+    print(df.head(20))
 
     
 
