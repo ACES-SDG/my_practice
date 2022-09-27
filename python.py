@@ -37,7 +37,7 @@ loops
 
 # print(saif,saif)
 
-import enum
+# import enum
 
 
 # fruits = ["apple", "banana", "cherry"]
@@ -74,12 +74,53 @@ import enum
 # print(x)
 # print(x)
 
-x = "awesome"
+# x = "awesome"
 
-def myfunc():
-  x = "fantastic"
-  print("Python is " + x)
+# def myfunc():
+#   x = "fantastic"
+#   print("Python is " + x)
 
-myfunc()
+# myfunc()
 
-print("Python is " + x)
+# print("Python is " + x)
+
+# x = 5
+
+# x = str("Hello World")
+
+# x = range(6)
+# for i in x:
+  # print(i)
+
+# x = dict(name="John", age=36)
+# y={'name':'john'}
+# details ={  'employeeDetails':{  'name': 'saif','empID':3245 ,'designation':'Cloud Infrastructure Engg' }    }
+
+# print(details.get('employeeDetails'))
+
+# x = set(("apple", "banana", "cherry",8))
+# print(x)
+
+# print(x[0])
+
+# x = frozenset(("apple", "banana", "cherry"))	
+# print(x)
+# x.add(2)
+# print(x)
+
+# x = bool('')
+
+# print(x)
+
+# x = bytes(5)
+
+# x = bytearray(5)
+
+# x = memoryview(bytes(5))
+# print(x)
+
+x = 1    # int
+y = 2.8  # float
+z = 1j   # complex
+
+print(type(z))

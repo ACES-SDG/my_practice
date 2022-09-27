@@ -14,7 +14,7 @@ def drag_motion(event):
 
 window = Tk()
 
-label1 =Label(window, bg='red', width=10, height=5)
+label1 =Label(window, bg='red', width=10, height=5,cursor='fleur')
 label1.place(x=1,y=1)
 
 label2 =Label(window, bg='blue', width=10, height=5)
