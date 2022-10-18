@@ -39,7 +39,7 @@ def openfile():
     global cols
     btn = askopenfilename(initialdir="Desktop",
                                           title="Select A File",
-                                          filetype=(('text files','*.csv'),("xlsx files", "*.xlsx"), ("All Files", "*.*")))
+                                          filetypes=(('text files','*.csv'),("xlsx files", "*.xlsx"), ("All Files", "*.*")))
     df= pd.read_csv(btn)
     
     cols = df.columns
