@@ -1,8 +1,9 @@
-import tkinter  as tk
+import tkinter as tk
 from tkinter import ttk
-from tkinter.filedialog import askopenfilename 
-import  pandas as pd
+from tkinter.filedialog import askopenfilename
+
 import matplotlib.pyplot as plt
+import pandas as pd
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
 

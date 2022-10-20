@@ -1,7 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
 
-
 # root window
 root = tk.Tk()
 root.geometry('300x200')
