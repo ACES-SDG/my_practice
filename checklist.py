@@ -1,7 +1,10 @@
 import tkinter as tk
+from typing import List
+
+
 class ChecklistBox(tk.Frame):
-    def __init__(self,  choices, **kwargs):
-        tk.Frame.__init__(self,  **kwargs)
+    def __init__(self,  choices=[], ):
+        tk.Frame.__init__(self, )
 
         self.vars = []
         bg = self.cget("background")
@@ -24,8 +27,8 @@ class ChecklistBox(tk.Frame):
                 values.append(value)
         return values
 root = tk.Tk()
-choices = ("Author", "John", "Mohan", "James", "Ankur", "Robert")
-checklist = ChecklistBox(root, choices, bd=1, relief="sunken", background="white")
+choices = ["Author", "John", "Mohan", "James", "Ankur", "Robert"]
+checklist = ChecklistBox(root, choices)
 
 print("choices:", checklist.getCheckedItems())
 

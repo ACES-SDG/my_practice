@@ -68,7 +68,6 @@ class Datasource(tk.Tk):
             self.sheets.insert(END, items)
     self.sheets.bind("<<ListboxSelect>>", self.callback)
 
-
   # def callback(self,*arg):
   #   global default_sheet,data
   #   selection = event.widget.curselection()
