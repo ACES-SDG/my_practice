@@ -26,14 +26,14 @@ MENU_ = {
 }
 
 # level one of the dictionary
-for drink in MENU_:
-    #this should print the drinks and cost
-    print(drink)
-    #this should print the ingredients   
-    for ingredient_list in MENU_[drink]:
-        print(ingredient_list)
-        for item in MENU_[drink][ingredient_list]: 
-            print(item)
+# for drink in MENU_:
+#     #this should print the drinks and cost
+#     print(drink)
+#     #this should print the ingredients   
+#     for ingredient_list in MENU_[drink]:
+#         print(ingredient_list)
+#         for item in MENU_[drink][ingredient_list]: 
+#             print(item)
 
 # for drink, data in MENU_.items():
 #     #this should print the drinks and cost
