@@ -63,11 +63,16 @@ dicth =    {
 # else:
 #     print('no')
     
-print(dicth, ' before \n')
-if 'sheet 3' in dicth["Dashboard 3"].keys():
-    dicth['Dashboard 3']['rename_this'] = dicth["Dashboard 3"].pop('sheet 3')
-    print(dicth,'after')
+# print(dicth, ' before \n')
+# if 'sheet 3' in dicth["Dashboard 3"].keys():
+#     dicth['Dashboard 3']['rename_this'] = dicth["Dashboard 3"].pop('sheet 3')
+#     print(dicth,'after')
     
-else:
-    print('not ok')
+# else:
+#     print('not ok')
 
+
+# print(dicth['Dashboard 3']['sheet 3'].get('water'))
+
+
+# dicth['Dashboard 3']['sheet 3'].keys() = True
